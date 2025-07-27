@@ -2,6 +2,7 @@ import Image from "next/image";
 import logo from "../assets/logo.png"; 
 import translate from "../assets/translate.png";
 import globesimple from "../assets/GlobeSimple.png";
+import arrow from "../assets/ArrowUpRight.png";
 
 export default function Header() {
   return (
@@ -15,13 +16,13 @@ export default function Header() {
       <nav className="hidden md:flex items-center space-x-8">
         <a
           href="#"
-          className="text-white hover:text-gray-300 transition-colors">
-          Home
+          className="text-white hover:text-gray-300 transition-colors flex items-center">
+          Home +
         </a>
         <a
           href="#"
           className="text-white hover:text-gray-300 transition-colors">
-          About us
+          About us +
         </a>
         <a
           href="#"
@@ -42,17 +43,17 @@ export default function Header() {
             <Image
               src={translate}
               alt="languages"
-              width={40}
-              height={40}
+              width={20}
+              height={20}
               className="mr-2"
             />
           </span>
           <span className="text-white text-sm">
             <Image
               src={globesimple}
-              alt="languages"
-              width={40}
-              height={40}
+              alt="select language"
+              width={20}
+              height={20}
               className="mr-2"
             />
           </span>
