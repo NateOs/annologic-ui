@@ -1,38 +1,47 @@
-'use client';
+"use client";
+import openai from "../assets/openai.png";
+import theverge from "../assets/the_verge_logo.svg.png";
+import figma from "../assets/figma.png";
+import stripe from "../assets/stripe_logo.svg.png";
+import Image from "next/image";
+
 export default function HeroSection() {
   return (
     <section className="min-h-screen relative overflow-hidden bg-black">
       {/* Animated circular gradients */}
       <div className="absolute inset-0">
         {/* Purple circle */}
-        <div className="absolute w-96 h-96 rounded-full opacity-30 animate-pulse"
-             style={{
-               background: 'radial-gradient(circle, rgb(88, 28, 135) 0%, transparent 70%)',
-               left: '10%',
-               top: '20%',
-               animation: 'float1 6s ease-in-out infinite'
-             }}>
-        </div>
-        
+        <div
+          className="absolute w-96 h-96 rounded-full opacity-30 animate-pulse"
+          style={{
+            background:
+              "radial-gradient(circle, rgb(88, 28, 135) 0%, transparent 70%)",
+            left: "10%",
+            top: "20%",
+            animation: "float1 6s ease-in-out infinite",
+          }}></div>
+
         {/* Blue circle */}
-        <div className="absolute w-80 h-80 rounded-full opacity-40 animate-pulse"
-             style={{
-               background: 'radial-gradient(circle, rgb(30, 58, 138) 0%, transparent 70%)',
-               left: '15%',
-               top: '50%',
-               animation: 'float2 8s ease-in-out infinite'
-             }}>
-        </div>
-        
+        <div
+          className="absolute w-80 h-80 rounded-full opacity-40 animate-pulse"
+          style={{
+            background:
+              "radial-gradient(circle, rgb(30, 58, 138) 0%, transparent 70%)",
+            left: "15%",
+            top: "50%",
+            animation: "float2 8s ease-in-out infinite",
+          }}></div>
+
         {/* Teal circle */}
-        <div className="absolute w-72 h-72 rounded-full opacity-35 animate-pulse"
-             style={{
-               background: 'radial-gradient(circle, rgb(13, 148, 136) 0%, transparent 70%)',
-               left: '5%',
-               top: '70%',
-               animation: 'float3 7s ease-in-out infinite'
-             }}>
-        </div>
+        <div
+          className="absolute w-72 h-72 rounded-full opacity-35 animate-pulse"
+          style={{
+            background:
+              "radial-gradient(circle, rgb(13, 148, 136) 0%, transparent 70%)",
+            left: "5%",
+            top: "70%",
+            animation: "float3 7s ease-in-out infinite",
+          }}></div>
       </div>
 
       {/* Background pattern/grid */}
@@ -43,20 +52,56 @@ export default function HeroSection() {
       {/* Add custom animations */}
       <style jsx>{`
         @keyframes float1 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(30px, -20px) scale(1.1); }
-          66% { transform: translate(-20px, 30px) scale(0.9); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          33% {
+            transform: translate(30px, -20px) scale(1.1);
+          }
+          66% {
+            transform: translate(-20px, 30px) scale(0.9);
+          }
         }
-        
+
         @keyframes float2 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          50% { transform: translate(-40px, -30px) scale(1.2); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          50% {
+            transform: translate(-40px, -30px) scale(1.2);
+          }
         }
-        
+
         @keyframes float3 {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          25% { transform: translate(20px, -40px) scale(0.8); }
-          75% { transform: translate(-30px, 20px) scale(1.1); }
+          0%,
+          100% {
+            transform: translate(0, 0) scale(1);
+          }
+          25% {
+            transform: translate(20px, -40px) scale(0.8);
+          }
+          75% {
+            transform: translate(-30px, 20px) scale(1.1);
+          }
+        }
+
+        @keyframes slide {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-slide {
+          animation: slide 20s linear infinite;
+        }
+
+        .animate-slide:hover {
+          animation-play-state: paused;
         }
       `}</style>
 
@@ -85,13 +130,105 @@ export default function HeroSection() {
           </button>
         </div>
 
-        {/* Partner logos */}
-        <div className="flex items-center justify-center space-x-12 opacity-60">
-          <div className="text-white font-bold">OpenAI</div>
-          <div className="text-white font-bold">TheVerse</div>
-          <div className="text-white font-bold">Figma</div>
-          <div className="text-white font-bold">stripe</div>
-          <div className="text-white font-bold">trivago</div>
+        {/* Partner logos slider */}
+        <div className="relative w-full max-w-6xl overflow-hidden">
+          <div className="flex items-center animate-slide space-x-16">
+            {/* First set of logos */}
+            <div className="flex items-center space-x-16 flex-shrink-0">
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={openai}
+                    alt="OPENAI"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={theverge}
+                    alt="THEVERGE"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={figma}
+                    alt="FIGMA"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={stripe}
+                    alt="STRIPE"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+            </div>
+
+            {/* Duplicate set for seamless loop */}
+            <div className="flex items-center space-x-16 flex-shrink-0">
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={openai}
+                    alt="OPENAI"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={theverge}
+                    alt="THEVERGE"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={figma}
+                    alt="FIGMA"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+              <div className="w-24 h-12 flex items-center justify-center">
+                <span className="text-white text-xs font-bold">
+                  <Image
+                    src={stripe}
+                    alt="STRIPE"
+                    width={96}
+                    height={48}
+                    className="opacity-60 hover:opacity-100 transition-opacity"
+                  />
+                </span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
