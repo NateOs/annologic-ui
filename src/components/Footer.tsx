@@ -64,7 +64,7 @@ export default function Footer() {
       <div className="absolute inset-0">
         {/* Blue blob */}
         <motion.div
-          className="absolute w-96 h-96 rounded-full opacity-40"
+          className="absolute w-96 h-96 rounded-full opacity-80"
           style={{
             background: "radial-gradient(circle, rgb(30, 58, 138) 0%, transparent 70%)",
             left: "10%",
@@ -76,7 +76,7 @@ export default function Footer() {
 
         {/* Purple blob */}
         <motion.div
-          className="absolute w-80 h-80 rounded-full opacity-35"
+          className="absolute w-80 h-80 rounded-full opacity-80"
           style={{
             background: "radial-gradient(circle, rgb(88, 28, 135) 0%, transparent 70%)",
             right: "15%",
@@ -88,7 +88,7 @@ export default function Footer() {
 
         {/* Teal blob */}
         <motion.div
-          className="absolute w-72 h-72 rounded-full opacity-30"
+          className="absolute w-72 h-72 rounded-full opacity-50"
           style={{
             background: "radial-gradient(circle, rgb(13, 148, 136) 0%, transparent 70%)",
             left: "60%",
