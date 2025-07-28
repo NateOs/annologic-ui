@@ -99,7 +99,7 @@ export default function FeaturesSection() {
 
         {/* Teal blob - 5x bigger (72 * 5 = 360) */}
         <motion.div
-          className="absolute w-[360px] h-[360px] rounded-full opacity-35"
+          className="absolute w-[750px] h-[750px] rounded-full opacity-35"
           style={{
             background: "radial-gradient(circle, rgb(13, 148, 136) 0%, transparent 70%)",
             left: "50%",
@@ -123,7 +123,7 @@ export default function FeaturesSection() {
 
         {/* Additional blue blob - 5x bigger (56 * 5 = 280) */}
         <motion.div
-          className="absolute w-[280px] h-[280px] rounded-full opacity-25"
+          className="absolute w-[600px] h-[600px] rounded-full opacity-25"
           style={{
             background: "radial-gradient(circle, rgb(30, 58, 138) 0%, transparent 70%)",
             left: "5%",
