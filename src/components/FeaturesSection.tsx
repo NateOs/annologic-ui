@@ -3,6 +3,8 @@
 import sealcheck from "../assets/SealCheck.png";
 import logoblack from "../assets/logoblack.png";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
 export default function FeaturesSection() {
   const features = [
     "Viverra ipsum pellentesque nulla sed viverra",
@@ -13,71 +15,251 @@ export default function FeaturesSection() {
     "Viverra ipsum pellentesque nulla sed viverra",
   ];
 
+  // Animation variants for background blobs
+  const blobVariants = {
+    blob1: {
+      x: [0, 40, -30, 20, 0],
+      y: [0, -25, 35, -15, 0],
+      scale: [1, 1.1, 0.9, 1.05, 1],
+      transition: {
+        duration: 8,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    },
+    blob2: {
+      x: [0, -50, 30, -20, 0],
+      y: [0, 40, -30, 25, 0],
+      scale: [1, 1.2, 0.8, 1.1, 1],
+      transition: {
+        duration: 10,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    },
+    blob3: {
+      x: [0, 25, -40, 35, -10, 0],
+      y: [0, -35, 25, -20, 30, 0],
+      scale: [1, 0.9, 1.15, 0.95, 1.1, 1],
+      transition: {
+        duration: 12,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    },
+    blob4: {
+      x: [0, -35, 45, -25, 0],
+      y: [0, 30, -40, 20, 0],
+      scale: [1, 1.15, 0.85, 1.05, 1],
+      transition: {
+        duration: 9,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    },
+    blob5: {
+      x: [0, 55, -20, 30, -15, 0],
+      y: [0, -45, -25, 35, 10, 0],
+      scale: [1, 0.9, 1.25, 0.95, 1.1, 1],
+      transition: {
+        duration: 11,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <section className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-black relative overflow-hidden">
-      {/* Background pattern */}
+    <section className="min-h-screen bg-black relative overflow-hidden">
+      {/* Animated background blobs */}
       <div className="absolute inset-0">
+        {/* Purple blob - 5x bigger (80 * 5 = 400) */}
+        <motion.div
+          className="absolute w-[400px] h-[400px] rounded-full opacity-30"
+          style={{
+            background: "radial-gradient(circle, rgb(147, 51, 234) 0%, transparent 70%)",
+            left: "10%",
+            top: "15%",
+          }}
+          variants={blobVariants}
+          animate="blob1"
+        />
+
+        {/* Blue blob - 5x bigger (96 * 5 = 480) */}
+        <motion.div
+          className="absolute w-[480px] h-[480px] rounded-full opacity-25"
+          style={{
+            background: "radial-gradient(circle, rgb(59, 130, 246) 0%, transparent 70%)",
+            right: "10%",
+            top: "20%",
+          }}
+          variants={blobVariants}
+          animate="blob2"
+        />
+
+        {/* Teal blob - 5x bigger (72 * 5 = 360) */}
+        <motion.div
+          className="absolute w-[360px] h-[360px] rounded-full opacity-35"
+          style={{
+            background: "radial-gradient(circle, rgb(13, 148, 136) 0%, transparent 70%)",
+            left: "50%",
+            bottom: "10%",
+          }}
+          variants={blobVariants}
+          animate="blob3"
+        />
+
+        {/* Additional purple blob - 5x bigger (64 * 5 = 320) */}
+        <motion.div
+          className="absolute w-[320px] h-[320px] rounded-full opacity-20"
+          style={{
+            background: "radial-gradient(circle, rgb(88, 28, 135) 0%, transparent 70%)",
+            right: "5%",
+            bottom: "25%",
+          }}
+          variants={blobVariants}
+          animate="blob4"
+        />
+
+        {/* Additional blue blob - 5x bigger (56 * 5 = 280) */}
+        <motion.div
+          className="absolute w-[280px] h-[280px] rounded-full opacity-25"
+          style={{
+            background: "radial-gradient(circle, rgb(30, 58, 138) 0%, transparent 70%)",
+            left: "5%",
+            bottom: "5%",
+          }}
+          variants={blobVariants}
+          animate="blob5"
+        />
+      </div>
+
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[length:50px_50px]"></div>
       </div>
 
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6">
         {/* Section heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <motion.h2 
+            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
+          >
             Accomplish
             <br />
             Anything in Crypto
-          </h2>
-          <p className="text-lg text-gray-300 max-w-2xl">
+          </motion.h2>
+          <motion.p 
+            className="text-lg text-gray-300 max-w-2xl"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
             This is the space to introduce the Services section. Briefly
             describe the types of services offered and highlight any special
             benefits or features.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
         {/* Features grid with center logo */}
         <div className="relative max-w-6xl w-full">
           {/* Center logo */}
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
-            <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center">
+          <motion.div 
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
+            initial={{ opacity: 0, scale: 0.5 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              className="w-32 h-32 bg-white rounded-full flex items-center justify-center"
+              whileHover={{ scale: 1.1, rotate: 5 }}
+              animate={{ 
+                boxShadow: [
+                  "0 0 20px rgba(255,255,255,0.3)",
+                  "0 0 40px rgba(255,255,255,0.5)",
+                  "0 0 20px rgba(255,255,255,0.3)"
+                ]
+              }}
+              transition={{ 
+                boxShadow: { duration: 2, repeat: Infinity },
+                hover: { duration: 0.3 }
+              }}
+            >
               <Image
                 src={logoblack}
                 alt="logo"
                 width={80}
                 height={80}
-                className="w-20 h-20"></Image>
-            </div>
-          </div>
+                className="w-20 h-20"
+              />
+            </motion.div>
+          </motion.div>
 
           {/* Left features */}
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 space-y-8">
             {features.slice(0, 3).map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-center space-x-3 text-white">
-                <Image
-                  src={sealcheck}
-                  alt="logo"
-                  width={20}
-                  height={20}></Image>{" "}
+                className="flex items-center space-x-3 text-white"
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                whileHover={{ x: 10, scale: 1.05 }}
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src={sealcheck}
+                    alt="check"
+                    width={20}
+                    height={20}
+                  />
+                </motion.div>
                 <span className="text-sm">{feature}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
 
           {/* Right features */}
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 space-y-8">
             {features.slice(3, 6).map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex items-center space-x-3 text-white">
-                <Image
-                  src={sealcheck}
-                  alt="logo"
-                  width={20}
-                  height={20}></Image>
+                className="flex items-center space-x-3 text-white"
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 1.1 + index * 0.1 }}
+                whileHover={{ x: -10, scale: 1.05 }}
+                viewport={{ once: true }}
+              >
+                <motion.div
+                  whileHover={{ rotate: 360 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <Image
+                    src={sealcheck}
+                    alt="check"
+                    width={20}
+                    height={20}
+                  />
+                </motion.div>
                 <span className="text-sm">{feature}</span>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
