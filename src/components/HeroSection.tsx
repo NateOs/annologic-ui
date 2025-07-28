@@ -47,7 +47,7 @@ export default function HeroSection() {
       <div className="absolute inset-0">
         {/* Purple circle */}
         <motion.div
-          className="absolute w-96 h-96 rounded-full opacity-30"
+          className="absolute w-[800px] h-[800px] rounded-full opacity-90"
           style={{
             background:
               "radial-gradient(circle, rgb(88, 28, 135) 0%, transparent 70%)",
@@ -60,7 +60,7 @@ export default function HeroSection() {
 
         {/* Blue circle */}
         <motion.div
-          className="absolute w-80 h-80 rounded-full opacity-40"
+          className="absolute w-[800px] h-[800px] rounded-full opacity-80"
           style={{
             background:
               "radial-gradient(circle, rgb(30, 58, 138) 0%, transparent 70%)",
