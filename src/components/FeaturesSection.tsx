@@ -1,11 +1,16 @@
+"use client";
+
+import sealcheck from "../assets/SealCheck.png";
+import logoblack from "../assets/logoblack.png";
+import Image from "next/image";
 export default function FeaturesSection() {
   const features = [
     "Viverra ipsum pellentesque nulla sed viverra",
-    "Viverra ipsum pellentesque nulla sed viverra", 
     "Viverra ipsum pellentesque nulla sed viverra",
     "Viverra ipsum pellentesque nulla sed viverra",
     "Viverra ipsum pellentesque nulla sed viverra",
-    "Viverra ipsum pellentesque nulla sed viverra"
+    "Viverra ipsum pellentesque nulla sed viverra",
+    "Viverra ipsum pellentesque nulla sed viverra",
   ];
 
   return (
@@ -24,8 +29,9 @@ export default function FeaturesSection() {
             Anything in Crypto
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl">
-            This is the space to introduce the Services section. Briefly describe the
-            types of services offered and highlight any special benefits or features.
+            This is the space to introduce the Services section. Briefly
+            describe the types of services offered and highlight any special
+            benefits or features.
           </p>
         </div>
 
@@ -34,17 +40,26 @@ export default function FeaturesSection() {
           {/* Center logo */}
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
             <div className="w-32 h-32 bg-white rounded-full flex items-center justify-center">
-              <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center">
-                <div className="w-8 h-8 bg-white rounded-full"></div>
-              </div>
+              <Image
+                src={logoblack}
+                alt="logo"
+                width={80}
+                height={80}
+                className="w-20 h-20"></Image>
             </div>
           </div>
 
           {/* Left features */}
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 space-y-8">
             {features.slice(0, 3).map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3 text-white">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
+              <div
+                key={index}
+                className="flex items-center space-x-3 text-white">
+                <Image
+                  src={sealcheck}
+                  alt="logo"
+                  width={20}
+                  height={20}></Image>{" "}
                 <span className="text-sm">{feature}</span>
               </div>
             ))}
@@ -53,26 +68,17 @@ export default function FeaturesSection() {
           {/* Right features */}
           <div className="absolute right-0 top-1/2 transform -translate-y-1/2 space-y-8">
             {features.slice(3, 6).map((feature, index) => (
-              <div key={index} className="flex items-center space-x-3 text-white">
-                <div className="w-2 h-2 bg-white rounded-full"></div>
+              <div
+                key={index}
+                className="flex items-center space-x-3 text-white">
+                <Image
+                  src={sealcheck}
+                  alt="logo"
+                  width={20}
+                  height={20}></Image>
                 <span className="text-sm">{feature}</span>
               </div>
             ))}
-          </div>
-
-          {/* Connecting lines */}
-          <div className="absolute inset-0 pointer-events-none">
-            <svg className="w-full h-full" viewBox="0 0 800 400">
-              {/* Left side lines */}
-              <line x1="200" y1="150" x2="350" y2="200" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-              <line x1="200" y1="200" x2="350" y2="200" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-              <line x1="200" y1="250" x2="350" y2="200" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-              
-              {/* Right side lines */}
-              <line x1="450" y1="200" x2="600" y2="150" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-              <line x1="450" y1="200" x2="600" y2="200" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-              <line x1="450" y1="200" x2="600" y2="250" stroke="rgba(255,255,255,0.2)" strokeWidth="1" />
-            </svg>
           </div>
         </div>
       </div>
