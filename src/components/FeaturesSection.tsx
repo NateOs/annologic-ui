@@ -225,8 +225,7 @@ export default function FeaturesSection() {
                   ]
                 }}
                 transition={{ 
-                  boxShadow: { duration: 2, repeat: Infinity },
-                  hover: { duration: 0.3 }
+                  boxShadow: { duration: 2, repeat: Infinity }
                 }}
               >
                 {/* Radiating rings */}
@@ -324,7 +323,6 @@ export default function FeaturesSection() {
                   }}
                   transition={{ 
                     boxShadow: { duration: 2, repeat: Infinity },
-                    hover: { duration: 0.3 }
                   }}
                 >
                   {/* Radiating rings */}
@@ -420,7 +418,7 @@ export default function FeaturesSection() {
                         height={20}
                       />
                     </motion.div>
-                    <span className="text-sm">{feature}</span>
+                    <span className="text-lg">{feature}</span>
                   </motion.div>
                 ))}
               </div>

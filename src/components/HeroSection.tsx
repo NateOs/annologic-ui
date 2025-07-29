@@ -4,7 +4,7 @@ import theverge from "../assets/the_verge_logo.svg.png";
 import figma from "../assets/figma.png";
 import stripe from "../assets/stripe_logo.svg.png";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 
 export default function HeroSection() {
   // Animation variants for different blobs
@@ -16,7 +16,7 @@ export default function HeroSection() {
       transition: {
         duration: 6,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut // use the imported easeInOut function
       }
     },
     blue: {
@@ -26,7 +26,7 @@ export default function HeroSection() {
       transition: {
         duration: 8,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut// cubic-bezier for easeInOut
       }
     },
     teal: {
@@ -36,7 +36,7 @@ export default function HeroSection() {
       transition: {
         duration: 7,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut// cubic-bezier for easeInOut
       }
     }
   };

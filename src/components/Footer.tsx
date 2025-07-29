@@ -1,7 +1,7 @@
 'use client'
 import Image from "next/image";
 import logo from "../assets/logo.png";
-import { motion } from "framer-motion";
+import { motion, useAnimation, easeInOut } from "framer-motion";
 
 export default function Footer() {
   // Animation variants for different blobs
@@ -13,7 +13,7 @@ export default function Footer() {
       transition: {
         duration: 8,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut
       }
     },
     blob2: {
@@ -23,7 +23,7 @@ export default function Footer() {
       transition: {
         duration: 10,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut
       }
     },
     blob3: {
@@ -33,7 +33,7 @@ export default function Footer() {
       transition: {
         duration: 12,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut
       }
     },
     blob4: {
@@ -43,7 +43,7 @@ export default function Footer() {
       transition: {
         duration: 9,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut
       }
     },
     blob5: {
@@ -53,7 +53,7 @@ export default function Footer() {
       transition: {
         duration: 11,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: easeInOut
       }
     }
   };
