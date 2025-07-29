@@ -93,7 +93,7 @@ export default function HeroSection() {
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-6 text-center">
         {/* Main heading */}
         <motion.h1 
-          className="text-5xl md:text-7xl font-bold text-white mb-8 max-w-4xl leading-tight"
+          className="text-5xl md:text-7xl text-white mb-8 max-w-4xl poppins-regular"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}

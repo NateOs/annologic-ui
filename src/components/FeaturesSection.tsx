@@ -149,7 +149,7 @@ export default function FeaturesSection() {
           viewport={{ once: true }}
         >
           <motion.h2 
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl text-white mt-[-12.5rem]  poppins-regular"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -160,7 +160,7 @@ export default function FeaturesSection() {
             Anything in Crypto
           </motion.h2>
           <motion.p 
-            className="text-lg text-gray-300 max-w-2xl"
+            className="text-lg text-gray-300 max-w-2xl pt-8 pb-8"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -176,7 +176,7 @@ export default function FeaturesSection() {
         <div className="relative max-w-6xl w-full">
           {/* Center logo */}
           <motion.div 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 pt-[12.5rem]"
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -208,7 +208,7 @@ export default function FeaturesSection() {
           </motion.div>
 
           {/* Left features */}
-          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 space-y-8">
+          <div className="absolute left-0 top-1/2 transform -translate-y-1/2 space-y-8 pt-8 mt-8">
             {features.slice(0, 3).map((feature, index) => (
               <motion.div
                 key={index}
@@ -236,7 +236,7 @@ export default function FeaturesSection() {
           </div>
 
           {/* Right features */}
-          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 space-y-8">
+          <div className="absolute right-0 top-1/2 transform -translate-y-1/2 space-y-8 pt-8 mt-8">
             {features.slice(3, 6).map((feature, index) => (
               <motion.div
                 key={index}
