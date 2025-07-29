@@ -176,14 +176,14 @@ export default function FeaturesSection() {
         <div className="relative max-w-6xl w-full">
           {/* Center logo */}
           <motion.div 
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 pt-[12.5rem]"
+            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 pt-[12.5rem] "
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
             <motion.div 
-              className="w-32 h-32 bg-white rounded-full flex items-center justify-center"
+              className="w-32 h-32 bg-white rounded-full flex items-center justify-center relative"
               whileHover={{ scale: 1.1, rotate: 5 }}
               animate={{ 
                 boxShadow: [
@@ -197,12 +197,72 @@ export default function FeaturesSection() {
                 hover: { duration: 0.3 }
               }}
             >
+              {/* Radiating rings */}
+              <motion.div
+                className="absolute inset-0 rounded-full border-2 border-white/30"
+                animate={{
+                  scale: [1, 1.5, 2],
+                  opacity: [0.6, 0.3, 0]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeOut"
+                }}
+              />
+              <motion.div
+                className="absolute inset-0 rounded-full border-2 border-white/20"
+                animate={{
+                  scale: [1, 1.8, 2.5],
+                  opacity: [0.5, 0.2, 0]
+                }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                  delay: 0.3
+                }}
+              />
+              <motion.div
+                className="absolute inset-0 rounded-full border border-white/15"
+                animate={{
+                  scale: [1, 2.2, 3],
+                  opacity: [0.4, 0.1, 0]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                  delay: 0.6
+                }}
+              />
+              
+              {/* Pulsating border */}
+              <motion.div
+                className="absolute inset-0 rounded-full border-4"
+                animate={{
+                  borderColor: [
+                    "rgba(255,255,255,0.8)",
+                    "rgba(147,51,234,0.8)",
+                    "rgba(59,130,246,0.8)",
+                    "rgba(13,148,136,0.8)",
+                    "rgba(255,255,255,0.8)"
+                  ],
+                  scale: [1, 1.05, 1]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              
               <Image
                 src={logoblack}
                 alt="logo"
                 width={80}
                 height={80}
-                className="w-20 h-20"
+                className="w-20 h-20 relative z-10"
               />
             </motion.div>
           </motion.div>
