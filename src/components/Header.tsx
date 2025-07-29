@@ -16,22 +16,22 @@ export default function Header() {
       <nav className="hidden md:flex items-center space-x-8">
         <a
           href="#"
-          className="text-white hover:text-gray-300 transition-colors flex items-center">
+          className="hover:text-white text-gray-300 transition-colors flex items-center">
           Home +
         </a>
         <a
           href="#"
-          className="text-white hover:text-gray-300 transition-colors">
+          className="hover:text-white text-gray-300 transition-colors">
           About us +
         </a>
         <a
           href="#"
-          className="text-white hover:text-gray-300 transition-colors">
+          className="hover:text-white text-gray-300 transition-colors">
           Company
         </a>
         <a
           href="#"
-          className="text-white hover:text-gray-300 transition-colors">
+          className="hover:text-white text-gray-300 transition-colors">
           Resources
         </a>
       </nav>
@@ -58,7 +58,7 @@ export default function Header() {
             />
           </span>
         </div>
-        <button className="bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-100 transition-colors">
+        <button className="bg-white text-black px-4 py-2 rounded-md font-medium hover:bg-gray-300 transition-colors">
           Sign Up
         </button>
       </div>

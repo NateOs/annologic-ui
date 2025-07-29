@@ -129,7 +129,7 @@ export default function HeroSection() {
             Create Your Account Now
           </motion.button>
           <motion.button 
-            className="border border-white text-white px-8 py-3 rounded-md font-medium transition-colors flex items-center gap-2"
+            className="border border-gray-600 text-white px-8 py-3 rounded-md font-medium transition-colors flex items-center gap-2"
             whileHover={{ scale: 1.05, backgroundColor: "#ffffff", color: "#000000" }}
             whileTap={{ scale: 0.95 }}
           >

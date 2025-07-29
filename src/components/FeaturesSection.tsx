@@ -173,15 +173,15 @@ export default function FeaturesSection() {
         </motion.div>
 
         {/* Features layout - Mobile first, then responsive */}
-        <div className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-6xl">
-          {/* Mobile & Tablet layout (default) */}
-          <div className="flex flex-col items-center space-y-8 sm:space-y-10 lg:hidden">
-            {/* Features list */}
-            <div className="space-y-4 sm:space-y-6 w-full">
+        <div className="w-full max-w-sm sm:max-w-md md:max-w-4xl lg:max-w-6xl">
+          {/* Mobile, Tablet & Medium layout */}
+          <div className="flex flex-col items-center space-y-8 sm:space-y-10 xl:hidden">
+            {/* Features list - centered for medium screens */}
+            <div className="space-y-4 sm:space-y-6 w-full max-w-md md:max-w-lg mx-auto">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center space-x-3 text-white"
+                  className="flex items-center space-x-3 text-white justify-center md:justify-start"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
@@ -201,7 +201,7 @@ export default function FeaturesSection() {
                       className="w-4 h-4 sm:w-5 sm:h-5"
                     />
                   </motion.div>
-                  <span className="text-sm sm:text-base">{feature}</span>
+                  <span className="text-sm sm:text-base md:text-lg text-center md:text-left">{feature}</span>
                 </motion.div>
               ))}
             </div>
@@ -215,7 +215,7 @@ export default function FeaturesSection() {
               viewport={{ once: true }}
             >
               <motion.div 
-                className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 bg-white rounded-full flex items-center justify-center relative"
+                className="w-24 h-24 sm:w-28 sm:h-28 md:w-36 md:h-36 bg-white rounded-full flex items-center justify-center relative"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 animate={{ 
                   boxShadow: [
@@ -301,7 +301,7 @@ export default function FeaturesSection() {
           </div>
 
           {/* Desktop layout */}
-          <div className="hidden lg:flex flex-col items-center space-y-12">
+          <div className="hidden xl:flex flex-col items-center space-y-12 mb-8">
             {/* Features grid with center logo */}
             <div className="relative max-w-6xl w-full">
               {/* Desktop layout - Center logo */}
@@ -313,7 +313,7 @@ export default function FeaturesSection() {
                 viewport={{ once: true }}
               >
                 <motion.div 
-                  className="w-32 h-32 bg-white rounded-full flex items-center justify-center relative"
+                  className="w-32 h-32 bg-white rounded-full flex items-center justify-center relative mb-8"
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   animate={{ 
                     boxShadow: [

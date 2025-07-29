@@ -61,18 +61,20 @@ export default function ServicesGrid() {
           {services.map((service, index) => (
             <div key={index} className="flex flex-col sm:flex-row gap-6">
               {/* Left card with icon */}
-              <div className="bg-gray-800 rounded-2xl p-8 flex-1 flex flex-col items-center justify-center text-center min-h-[300px]">
-                <div className="text-gray-400 text-sm font-mono mb-4">
+              <div className="bg-gray-800 rounded-2xl p-8 flex-1 flex flex-col min-h-[300px] relative">
+                <div className="text-gray-400 text-4xl font-mono absolute top-8 left-8">
                   {service.number}
                 </div>
-                <Image
-                  src={service.icon}
-                  alt="logo"
-                  width={200}
-                  height={20}></Image>
-                <h3 className="text-white text-xl font-semibold">
-                  {service.title}
-                </h3>
+                <div className="flex-1 flex flex-col items-center justify-center text-center">
+                  <Image
+                    src={service.icon}
+                    alt="logo"
+                    width={100}
+                    height={100}></Image>
+                  <h3 className="text-white text-2xl font-semibold pt-8">
+                    {service.title}
+                  </h3>
+                </div>
               </div>
 
               {/* Right card with description */}
